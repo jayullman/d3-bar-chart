@@ -94,6 +94,14 @@ function drawChart() {
         .attr('height', svgHeight)
         .attr('class', 'graph');
 
+    // add graph title
+    svg.append('text')
+        .attr('x', svgWidth / 2 )
+        .attr('y', svgPadding)
+        .attr('class', 'graph-title')
+        .style('text-anchor', 'middle')
+        .text('Gross Domestic Product');
+
     // add x-axis label
     svg.append('text')
         .attr('x', svgWidth / 2 )

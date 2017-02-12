@@ -51,6 +51,10 @@ body {
   top: 5px;
 }
 
+.graph-title {
+  font-size: 1em;
+}
+
 .date-label {
   position: absolute;
   bottom: 5px;
@@ -69,7 +73,7 @@ h1, h2 {
 }
 
 .about-section {
-  margin: 0 auto;
+  margin: 30px auto;
   width: 65%;
   min-width: 350px;
   max-width: 750px;
