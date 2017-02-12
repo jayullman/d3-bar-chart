@@ -5,10 +5,10 @@ var yScale;
 // x scale for graph - dates
 var xScale;
 
-var svgWidth = 800;
+var svgWidth = 700;
 var svgHeight = 500;
-var svgPadding = 20;
-var svgPaddingLeft = 50;
+var svgPadding = 40;
+var svgPaddingLeft = 100;
 
 axios.get('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json')
     .then(function (response){
@@ -29,7 +29,7 @@ function printData(dataSet) {
     console.log(minGDP);
 
     yScale = d3.scaleLinear()
-        .domain([minGDP, maxGDP])
+        .domain([0, maxGDP])
         .range([svgHeight - svgPadding, svgPadding]);
 
     // TODO: parse dates
@@ -44,6 +44,21 @@ function printData(dataSet) {
     var svg = d3.select('body').append('svg')
         .attr('width', svgWidth)
         .attr('height', svgHeight);
+
+    // add x-axis label
+    svg.append('text')
+        .attr('x', svgWidth / 2 )
+        .attr('y', svgHeight)
+        .style('text-anchor', 'middle')
+        .text('Year');
+
+    // add y-axis label
+    svg.append('text')
+        .attr('x', 0 - svgHeight / 2)
+        .attr('y', svgPadding)
+        .style('text-anchor', 'middle')
+        .text('Gross Domestic Product (USA)')
+        .attr('transform', 'rotate(-90)');
 
     d3.select("svg").selectAll('rect')
         .data(dataSet)
@@ -75,15 +90,13 @@ function printData(dataSet) {
 
     svg.append('g')
         .attr('transform', 'translate(2,' + (svgHeight - svgPadding) + ')')
-        .call(xAxis);
-
+       .call(xAxis);
    
     var yAxis = d3.axisLeft(yScale);
-
-   //yAxis.tickFormat(d3.timeFormat('%Y'));
-
+    yAxis.tickSizeOuter(0);
+    
     svg.append('g')
-        .attr('transform', 'translate(50,0)')
+        .attr('transform', 'translate(' + svgPaddingLeft + ',0)')
         .call(yAxis);
 
 }
