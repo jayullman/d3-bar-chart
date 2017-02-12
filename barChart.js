@@ -62,13 +62,13 @@ window.onload = function() {
 
 function mouseOverHandler(d) {
     d3.select('.tooltip')
-                .attr('style', 'left: ' + (d3.event.clientX + 10)
-                    + 'px; top:  ' + (d3.event.clientY - tooltipHeight + 10) + 'px;' 
+                .attr('style', 'left: ' + (d3.event.clientX - (tooltipWidth / 2))
+                    + 'px; top:  ' + (d3.event.clientY - tooltipHeight - 10) + 'px;' 
                     + 'height: ' + tooltipHeight + 'px; width: ' + tooltipWidth + 'px;')
                 .classed('show-tooltip', true);
 
             d3.select('.gdp-label')
-                .text('$' + d[1].toFixed(2) + ' Billion');
+                .text('$' + d[1].toLocaleString('en-US', { currency: 'USD', minimumFractionDigits: 2 }) + ' Billion');
             
             var date = new Date(d[0])
             d3.select('.date-label')

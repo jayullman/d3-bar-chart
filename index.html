@@ -3,18 +3,43 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>D3.js Bar Chart</title>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css' rel='stylesheet'>
     <link href='styles.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato" rel="stylesheet">
+    <script src="https://use.fontawesome.com/f6ca9e3552.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src='barChart.js'></script>
 </head>
 <body>
     <h1>D3.js Bar Chart</h1>
-    <h2>A freeCodeCamp Project</h2>
+    <h2>A freeCodeCamp<i class="fa fa-free-code-camp" aria-hidden="true"></i> Project</h2>
 
     <div class="graph-container"></div>
 
-    <p>This project retrieves JSON data from the Federal Reserve Economic Data</p>
+    <div class="about-section">
+        <h3>About this project</h3>
 
+        <p>
+            This app makes an AJAX request for JSON data from the Federal Reserve Economic Data. Once the data is received, the data is bound
+            to an <code>&lt;svg&gt;</code> element and visualized using the <a href="https://d3js.org/" target="_blank">D3.js</a> library. You can 
+            mouseover the bars to find detailed information regarding that particular data point.
+        </p>
+
+        <h4>User Story Requirements</h4>
+        <ol class="user-story-list">
+            <li>I can see US Gross Domestic Product by quarter, over time.</li>
+            <li>I can mouse over a bar and see a tooltip with the GDP amount and exact year and month that bar represents.</li>
+        </ol>
+
+    </div>
+
+    <div class="footer">
+        <div class="tagline">Created by Jay</div>
+        <a target="_blank" href="https://github.com/libeja">
+            <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
+        </a>
+    </div>
+    
 </body>
 </html>
