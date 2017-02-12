@@ -25,7 +25,7 @@ body {
 }
 
 .bar:hover {
-  fill: #cee1ff;
+  fill: #fff;
 }
 
 .tooltip {
@@ -84,11 +84,14 @@ h1, h2 {
   font-size: 1em;
   text-align: center;
   background-color: #333;
-  height: 80px;
-  padding: 20px 20px 30px 20px;
+  padding: 20px;
   color: #fff;
   max-width: 700px;
   margin: 25px auto 0 auto;
+}
+
+.footer p {
+  font-size: .8em;
 }
 
 .footer a:link,
