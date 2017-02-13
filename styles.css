@@ -72,6 +72,10 @@ h1, h2 {
   font-family: 'Abril Fatface', cursive;
 }
 
+.header {
+  min-width: 325px;
+}
+
 .about-section {
   margin: 30px auto;
   width: 65%;
