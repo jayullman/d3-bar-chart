@@ -62,8 +62,8 @@ window.onload = function() {
 
 function mouseOverHandler(d) {
     d3.select('.tooltip')
-                .attr('style', 'left: ' + (d3.event.clientX - (tooltipWidth / 2))
-                    + 'px; top:  ' + (d3.event.clientY - tooltipHeight - 10) + 'px;' 
+                .attr('style', 'left: ' + (d3.event.pageX - (tooltipWidth / 2))
+                    + 'px; top:  ' + (d3.event.pageY - tooltipHeight - 25) + 'px;' 
                     + 'height: ' + tooltipHeight + 'px; width: ' + tooltipWidth + 'px;')
                 .classed('show-tooltip', true);
 
